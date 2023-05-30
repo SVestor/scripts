@@ -45,7 +45,7 @@ To use a plugin, make the plugin executable:
 and place it anywhere in your `PATH`:
 
  `mv ./kubectl-kubeplugin ~/.local/bin` or `sudo mv ./kubectl-kubeplugin /usr/local/bin` 
-> After the above is done **kubectl** be able to find the plugin, and you can run it with
+> After the above is done **kubectl** be able to find the plugin and you can run it with
 <br>
 
 Let's test and run our **kubectl-kubeplugin** on which we have been working on :
