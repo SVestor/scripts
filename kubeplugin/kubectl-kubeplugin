@@ -1,1 +1,21 @@
+#!/bin/bash
 
+# Define command-line arguments
+
+RESOURCE_TYPE=$1 # defining a res type variable pod or node - the first input arg
+ns=$2            # defining a namespace variable - the second input arg
+
+# Retrieve resource usage statistics from Kubernetes
+
+kubectl top $RESOURCE_TYPE -n $ns | tail -n 2 | while read -r line
+do
+  # Extract CPU and memory usage from the output
+  
+  NAME=$(echo ${line} | awk '{print $1}')
+  CPU=$(echo ${line} | awk '{print $2, $3}')
+  MEMORY=$(echo ${line} | awk '{print $4, $NF}')
+
+  # Output the statistics to the console
+ 
+ echo -e "\n Resource=$RESOURCE_TYPE\n Namespace=$ns\n Name=$NAME\n CPU=$CPU\n Memory=$MEMORY\n"
+done
