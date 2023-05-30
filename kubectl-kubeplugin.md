@@ -56,7 +56,7 @@ do    `kubectl kubeplugin node kube-system` where *node* refers to the `resource
 
     So, plugin is working, the job is done
     
-You can find the *kubectl-kubeplugin* script itself in the [kubeplugin](/kubeplugin) directory in the root /
+You can find the *kubectl-kubeplugin* script itself in the [scripts](/scripts) directory in the root /
 <br>
 <br>
 
