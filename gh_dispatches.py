@@ -1,4 +1,3 @@
-import functions_framework
 import requests
 import os
 
