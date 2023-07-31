@@ -3,7 +3,7 @@ import requests
 import os
 
 # Calling the github 'trigger_github_workflow' func after receiving a message in the topic
-    trigger_github_workflow()
+trigger_github_workflow()
 	
 def trigger_github_workflow():
     github_api_url = 'https://api.github.com/repos/{owner}/{repo}/dispatches'
