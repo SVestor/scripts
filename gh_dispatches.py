@@ -28,6 +28,6 @@ def trigger_github_workflow():
     else:
         print('Error triggering GitHub Workflow')
 
-# Calling the github 'trigger_github_workflow' func after receiving a message in the topic
+# Calling the github 'trigger_github_workflow' func from the current repo 'ci-infra-repo.yml' workflow
 trigger_github_workflow()
 	    
