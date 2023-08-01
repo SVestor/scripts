@@ -1,9 +1,6 @@
 import functions_framework
 import requests
 import os
-
-# Calling the github 'trigger_github_workflow' func after receiving a message in the topic
-trigger_github_workflow()
 	
 def trigger_github_workflow():
     github_api_url = 'https://api.github.com/repos/{owner}/{repo}/dispatches'
@@ -30,3 +27,7 @@ def trigger_github_workflow():
         print('GitHub Workflow triggered successfully')
     else:
         print('Error triggering GitHub Workflow')
+
+# Calling the github 'trigger_github_workflow' func after receiving a message in the topic
+trigger_github_workflow()
+	    
