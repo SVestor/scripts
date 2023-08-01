@@ -26,7 +26,7 @@ jobs:
         env:
             OWNER: "SVestor"
             REPO: "flux-cmp"
-            github_webhook_token: '${{ secrets.GH_PAT }}'
+            GH_PAT: '${{ secrets.GH_PAT }}'
         run: |-
           pip install --upgrade pip
           pip install -r requirements.txt
