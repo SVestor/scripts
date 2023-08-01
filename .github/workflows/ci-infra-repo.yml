@@ -27,4 +27,6 @@ jobs:
             OWNER: "SVestor"
             REPO: "flux-cmp"
             github_webhook_token: '${{ secrets.GH_PAT }}'
-        run: python gh_dispatches.py
+        run: |- 
+          pip install -r requirements.txt
+          python gh_dispatches.py
