@@ -14,9 +14,11 @@ random_numbers = random.sample(numbers, nr_numbers)
 random_symbols = random.sample(symbols, nr_symbols)
 random_list = random_letters + random_numbers + random_symbols
 
-nr_total = nr_letters + nr_symbols + nr_numbers
+# nr_total = nr_letters + nr_symbols + nr_numbers
+# or
+# nr_total = len(random_list)
 
-random_password = random.sample(random_list, nr_total)
+random_password = random.sample(random_list, len(random_list))
 
 print("\nYour password is: " , end='')
 for letter in random_password:
