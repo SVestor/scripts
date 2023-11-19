@@ -25,3 +25,37 @@ for letter in random_password:
   print(letter, end='')
 
 print("\n")
+
+################################################################
+# version 2
+
+# password = ""
+
+# for char in range(1, nr_letters+1):
+#   password += random.choice(letters)
+# for char in range(1, nr_symbols+1):
+#   password += random.choice(symbols)
+# for char in range(1, nr_numbers+1):
+#   password += random.choice(numbers)
+
+# password = ''.join(random.sample(password,len(password)))
+# print("Your password is:", password)
+
+#################################################################
+
+# version 3 with the shuffle() func using
+
+# password_list = []
+
+# for char in range(1, nr_letters+1):
+#   password_list.append(random.choice(letters))
+# for char in range(1, nr_symbols+1):
+#   password_list += random.choice(symbols)
+# for char in range(1, nr_numbers+1):
+#   password_list += random.choice(numbers)
+
+# random.shuffle(password_list)
+# password = ""
+# for char in password_list:
+#   password += char 
+# print(f"Your password is: {password}")
