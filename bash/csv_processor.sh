@@ -24,6 +24,7 @@ declare -i id_count=0
 log_message() {
   local level="${1}"  # e.g., INFO, DEBUG, ERROR
   local msg="${2}"
+  echo "[${level}] ${msg}" # Output to stdout
   logger -p "${level}" -t "bash script" "${msg}"
 }
 
