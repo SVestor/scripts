@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Author: me
+# Author: SV
 # Date Created: 04/24/24
 # Last Modified: 04/24/24
 
@@ -8,6 +8,23 @@
 # Usage:
 # backup_script
 
-tar -cvf ~/backup/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+cur_backup_dir="$(pwd)"
 
-exit $?
+
+echo "Hello, ${USER^}"
+echo -e "I will now back up your home directory, ${HOME}/\n"
+echo "You are running this script from ${cur_backup_dir}"
+echo -e "Therefore, your backup will be saved in the ${cur_backup_dir}\n"
+
+tar -cvf ${cur_backup_dir}/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+
+# Check if tar finished with the code eq 0
+err_code=$?
+
+if [[ ${err_code} -eq 0 ]]; then
+  echo "Backup Completed Successfully"
+  exit 0
+else
+  echo "An error occurred: ${err_code}" 
+  exit ${err_code}
+fi
