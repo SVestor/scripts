@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+# Author: me
+# Date Created: 04/24/24
+# Last Modified: 04/24/24
+
+# Description: simple backup files script
+# Usage:
+# backup_script
+
+tar -cvf ~/backup/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+
+exit $?
