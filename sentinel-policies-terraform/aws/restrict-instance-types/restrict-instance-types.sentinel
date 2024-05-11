@@ -13,9 +13,9 @@ dev_environment_tags = ["dev", "test", "prod"]
 
 # Filtering all of 'aws_instance' resources from the plan file
 ec2_instances = filter tfplan.resource_changes as _, resource {
-	resource.mode == "managed" and
-		resource.type == "aws_instance" and
-		(resource.change.actions contains "create" or resource.change.actions == ["update"])
+	resource.mode is "managed" and
+		resource.type is "aws_instance" and
+		(resource.change.actions contains "create" or resource.change.actions is ["update"])
 }
 
 # Checking if the Environment tag is labled as dev or test
@@ -41,9 +41,9 @@ main = rule {
 }
 
 if !is_dev_environment {
-	print("The resource is not labled as:", dev_environment_tags , "\nSet appropriate tags to met the condition to evaluate the next restrict_instance_type_for_dev_test rule \nCondition is not met, policy FAILED!!!")
+	print("The resource", keys(ec2_instances), "is not labled as:", dev_environment_tags , "\nSet appropriate tags to met the condition to evaluate the next restrict_instance_type_for_dev_test rule \nCondition is not met, policy FAILED!!!")
 } else if is_dev_environment and !restrict_instance_type_for_dev_test {
-  print ("The resource is labled as:", dev_environment_tags , "\nThe restrict_instance_type_for_dev_test rule was evaluated \nChange instance_type to allowed_instance_types:", allowed_instance_types, "to PASS the rule \nCondition is not met, policy FAILED!!!")
+  print ("The resource is labled as:", dev_environment_tags , "\nThe restrict_instance_type_for_dev_test rule was evaluated \nChange", keys(ec2_instances), "instance_type to allowed_instance_types:", allowed_instance_types, "to PASS the rule \nCondition is not met, policy FAILED!!!")
 } else {
   print ("Condition is met, sentinel policies PASSED!!! \nPress terraform apply to proceed")
 }
