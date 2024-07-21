@@ -23,7 +23,7 @@ PrivateKey = SERVER_PRIVATE_KEY
 # 10.200.200.0/24 subnet, both the NAT and FORWARD iptables rules are needed. 
 
 PostUp = /path/to/vpn_up.sh
-PostDown = /path/to/vpn_up.sh
+PostDown = /path/to/vpn_down.sh
 
 [Peer]
 # foo
@@ -76,7 +76,7 @@ fi
 # Date Created: 07/21/24
 # Last Modified: 07/21/24
 
-# Description:  vpn down routing script
+# Description: vpn down routing script
 # Usage:
 # vpn_down_script
 
