@@ -120,3 +120,7 @@ sudo iptables -L OUTPUT -vn
 **If you require more advanced documentation in relation to the topic**
 - [IptablesHowTo](https://help.ubuntu.com/community/IptablesHowTo)
 - [WireGuardConfiguration](https://wiki.archlinux.org/title/WireGuard#Server_configuration)
+
+## License
+
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
