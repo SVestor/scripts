@@ -72,7 +72,7 @@ fi
 ```bash
 #!/bin/bash
 
-# Author: RM
+# Author: SV
 # Date Created: 07/21/24
 # Last Modified: 07/21/24
 
